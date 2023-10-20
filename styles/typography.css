@@ -1,0 +1,30 @@
+body {
+  font-family: "Nunito", sans-serif;
+  @apply text-color-text;
+  line-height: 160%;
+  font-size: 16px;
+  @apply font-normal;
+  @apply bg-color-background;
+}
+
+h1 {
+  font-size: 24px;
+  @apply font-bold;
+  @apply text-color-title;
+}
+
+h2 {
+  font-size: 20px;
+  @apply font-bold;
+  @apply text-color-title;
+}
+
+h3 {
+  font-size: 18px;
+  @apply font-bold;
+  @apply text-color-title;
+}
+
+small {
+  font-size: 12px;
+}
