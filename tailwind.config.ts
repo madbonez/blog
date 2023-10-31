@@ -19,6 +19,7 @@ const config: Config = {
       'color-profile': '#0b1b2b',
       'color-background': '#071422',
       'color-input': '#040f1a',
+      'color-hero': '#14589C'
     }
   },
   plugins: [],

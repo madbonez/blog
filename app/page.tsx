@@ -1,14 +1,35 @@
 import Image from 'next/image';
-import { Header } from '../components/Header';
+import { Header } from './_components/Header';
+import { Hello } from './_components/hello/Hello';
+import { Search } from './_components/Search';
+import { Card } from './_components/Card';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <div
-        className={`absolute w-full h-full top-0 pt-60 flex flex-col items-center`}
-      >
-        <div className={`bg-color-profile h-[200px] w-[500px] shadow-xl`}></div>
+      <Hello />
+      <div className={`mt-16`}>
+        <Search />
+        <div className={`mt-6 flex flex-wrap justify-between pb-6 sm:pb-24`}>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+          <div className={`mt-2 lg:mt-10`}>
+            <Card />
+          </div>
+        </div>
       </div>
     </>
   );
