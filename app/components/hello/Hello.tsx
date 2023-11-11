@@ -17,8 +17,8 @@ export function Hello() {
       `}
     >
       <Image
-        className={`hidden sm:block`}
-        src="avatar.png"
+        className={`hidden sm:block rounded-2xl`}
+        src="/ava2.jpg"
         alt={``}
         width={148}
         height={148}

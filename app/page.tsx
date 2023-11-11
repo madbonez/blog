@@ -1,34 +1,28 @@
-import Image from 'next/image';
-import { Header } from './_components/Header';
-import { Hello } from './_components/hello/Hello';
-import { Search } from './_components/Search';
-import { Card } from './_components/Card';
+import { Card } from './components/Card';
+import { Search } from './components/Search';
+import { Hello } from './components/hello/Hello';
+import { Page } from './lib/Page';
+import { fetchNotes } from './lib/fetchNotes';
 
-export default function Home() {
+export default async function Home() {
+  const pages: Page[] = await fetchNotes();
+
   return (
     <>
       <Hello />
       <div className={`mt-16`}>
         <Search />
         <div className={`mt-6 flex flex-wrap justify-between pb-6 sm:pb-24`}>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
-          <div className={`mt-2 lg:mt-10`}>
-            <Card />
-          </div>
+          {pages.map((page, index) => (
+            <div key={index} className={`mt-2 lg:mt-10`}>
+              <Card
+                header={page.header}
+                description={page.description}
+                date={page.date}
+                slug={page.slug}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </>

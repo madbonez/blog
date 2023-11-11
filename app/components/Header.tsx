@@ -16,7 +16,7 @@ export function Header() {
         >
           <Image
             className={`mb-4`}
-            src="logo.svg"
+            src="/logo.svg"
             width={45}
             height={40}
             alt={``}
