@@ -27,6 +27,17 @@ sequenceDiagram
 
     Bob-->Alice: Checking with John...
     Alice->John: Yes... John, how are you?
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->Eva: Ok
+    Alice->Reab: Ok
+    Alice->Reab: Ok
+    Reab -> Jo: A
+    Reab -> Jo2: A
 
 ```
 

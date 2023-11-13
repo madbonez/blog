@@ -22,10 +22,9 @@ export default function RootLayout({
         <Header />
         <div
           className={`
-            w-[320px]
-            sm:w-[640px]
+            w-full
+            max-w-[768px]
             h-auto
-            sm:h-[200px]
             absolute
             top-60
             left-0
@@ -35,6 +34,7 @@ export default function RootLayout({
         >
           {children}
         </div>
+        <div id="modal-root" className={`absolute top-0 left-0`}></div>
       </body>
     </html>
   );

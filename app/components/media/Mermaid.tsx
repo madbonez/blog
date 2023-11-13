@@ -2,6 +2,7 @@
 
 import mermaid from 'mermaid';
 import { useEffect, useState } from 'react';
+import { FullScreenModal } from './FullscreenModal';
 
 mermaid.initialize({
   startOnLoad: true,
@@ -11,13 +12,22 @@ mermaid.initialize({
 
 export function Mermaid(props: { chart: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  useEffect(() => {
+  const rerenderMermaid = () => {
     mermaid.contentLoaded();
-  }, [isLoaded]);
+  };
 
-  return isLoaded ? <div className="mermaid">{props.chart}</div> : null;
+  useEffect(() => {
+    rerenderMermaid();
+  }, []);
+
+  return isLoaded ? (
+    <FullScreenModal modeChangeCallback={rerenderMermaid}>
+      <div className="mermaid flex justify-center">{props.chart}</div>
+    </FullScreenModal>
+  ) : null;
 }

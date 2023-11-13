@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import path from 'path';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Mermaid } from '../components/Mermaid';
+import { Mermaid } from '../components/media/Mermaid';
+import { SmartImage } from '../components/media/SmartImage';
 import { Page } from '../lib/Page';
 import { fetchNote, fetchSlugs } from '../lib/fetchNotes';
 
@@ -26,7 +26,7 @@ export default async function NotePage({
 
   return (
     <Markdown
-      className="markdown-body"
+      className="markdown-body p-2"
       remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
@@ -42,14 +42,10 @@ export default async function NotePage({
         },
         img: (props: { src?: string; alt?: string }) => {
           return (
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: 'auto', height: 'auto' }}
-              alt={`${props.alt ?? 'image'}`}
+            <SmartImage
               {...props}
               src={`${props.src ? `/${basePath}/${props.src}` : 'unknown.png'}`}
+              alt={`${props.alt ?? 'image'}`}
             />
           );
         },

@@ -14,7 +14,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`p-4 w-full lg:w-[300px] border-color-border border-2 rounded-md shrink-0 flex-wrap`}
+      className={`p-4 w-full lg:w-[240px] border-color-border border-2 rounded-md shrink-0 flex-wrap`}
     >
       <h2 className={`flex justify-between items-start`}>
         <Link href={slug.length > 1 ? slug.join('/') : slug[0]}>{header}</Link>

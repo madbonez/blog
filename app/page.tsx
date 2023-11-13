@@ -8,13 +8,13 @@ export default async function Home() {
   const pages: Page[] = await fetchNotes();
 
   return (
-    <>
+    <div className={`p-2`}>
       <Hello />
       <div className={`mt-16`}>
         <Search />
         <div className={`mt-6 flex flex-wrap justify-between pb-6 sm:pb-24`}>
           {pages.map((page, index) => (
-            <div key={index} className={`mt-2 lg:mt-10`}>
+            <div key={index} className={`mt-4 lg:mt-10`}>
               <Card
                 header={page.header}
                 description={page.description}
@@ -25,6 +25,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
