@@ -8,9 +8,15 @@ import { FullScreenModal } from './FullscreenModal';
 export function SmartImage(
   props: PropsWithChildren<{ src: string; alt: string }>,
 ) {
+  const modeChange = (isFull: boolean) => {
+    if (isFull) {
+      window.open(props.src, '_self');
+    }
+  };
+
   return (
-    <FullScreenModal>
-      <img src={props.src} alt={props.alt} className={`max-w-none`} />
+    <FullScreenModal modeChangeCallback={modeChange} isExternal={true}>
+      <img src={props.src} alt={props.alt} />
     </FullScreenModal>
   );
 }

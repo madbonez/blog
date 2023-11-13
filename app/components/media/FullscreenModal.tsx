@@ -5,7 +5,11 @@ import { Modal } from './Modal';
 export function FullScreenModal({
   children,
   modeChangeCallback,
-}: PropsWithChildren<{ modeChangeCallback?: () => void }>) {
+  isExternal,
+}: PropsWithChildren<{
+  modeChangeCallback?: (isFull: boolean) => void;
+  isExternal?: boolean;
+}>) {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const escFunction = useCallback((event: KeyboardEvent) => {
@@ -16,7 +20,7 @@ export function FullScreenModal({
 
   useEffect(() => {
     if (modeChangeCallback) {
-      modeChangeCallback();
+      modeChangeCallback(isFullScreen);
     }
   }, [modeChangeCallback, isFullScreen]);
 
@@ -28,7 +32,7 @@ export function FullScreenModal({
   }, [escFunction]);
 
   return (
-    <Modal isOpen={isFullScreen}>
+    <Modal isOpen={isFullScreen && !isExternal}>
       <span
         className={`relative w-full h-full overflow-auto ${
           isFullScreen ? 'flex justify-center' : ''

@@ -12,22 +12,30 @@ mermaid.initialize({
 
 export function Mermaid(props: { chart: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  const rerenderMermaid = () => {
+  const modeChange = (isFull: boolean) => {
+    setIsFullScreen(isFull);
     mermaid.contentLoaded();
   };
 
   useEffect(() => {
-    rerenderMermaid();
+    mermaid.contentLoaded();
   }, []);
 
   return isLoaded ? (
-    <FullScreenModal modeChangeCallback={rerenderMermaid}>
-      <div className="mermaid flex justify-center h-[500px]">{props.chart}</div>
+    <FullScreenModal modeChangeCallback={modeChange}>
+      <div
+        className={`mermaid flex justify-center ${
+          isFullScreen ? '' : 'h-[500px]'
+        } `}
+      >
+        {props.chart}
+      </div>
     </FullScreenModal>
   ) : (
     <div className={`h-[500px] w-full`}></div>
