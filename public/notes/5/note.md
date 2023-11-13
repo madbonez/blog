@@ -2,7 +2,7 @@
 slug:
   - fifth
 header: Architecture
-description: 'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data drawn.'
+description: 'Purumpumpum all have built-in data 22 differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and no yes they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.'
 keywords:
   - programming
   - javascript

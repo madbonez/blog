@@ -1,9 +1,8 @@
 ---
 slug:
-  - js
-  - fourth
-header: Programming languages
-description: 'Purumpumpum all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and no yes they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.'
+  - six
+header: Lazy ass
+description: 'Purumpumpum all have built-in data 22 differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and no yes they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.'
 keywords:
   - programming
   - javascript
@@ -11,7 +10,7 @@ keywords:
 date: 12 июн
 ---
 
-### First
+### Second
 
 Simple text
 
@@ -28,7 +27,17 @@ sequenceDiagram
 
     Bob-->Alice: Checking with John...
     Alice->John: Yes... John, how are you?
-
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->John: Ok
+    Alice->Eva: Ok
+    Alice->Reab: Ok
+    Alice->Reab: Ok
+    Reab -> Jo: A
+    Reab -> Jo2: A
 
 ```
 
@@ -45,6 +54,10 @@ simple test img
 ## Autolink literals
 
 www.example.com, https://example.com, and contact@example.com.
+
+# Image
+
+![image](first.drawio.png)
 
 ## Footnote
 
