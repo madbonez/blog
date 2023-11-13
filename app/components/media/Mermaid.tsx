@@ -27,7 +27,9 @@ export function Mermaid(props: { chart: string }) {
 
   return isLoaded ? (
     <FullScreenModal modeChangeCallback={rerenderMermaid}>
-      <div className="mermaid flex justify-center">{props.chart}</div>
+      <div className="mermaid flex justify-center h-[500px]">{props.chart}</div>
     </FullScreenModal>
-  ) : null;
+  ) : (
+    <div className={`h-[500px] w-full`}></div>
+  );
 }
