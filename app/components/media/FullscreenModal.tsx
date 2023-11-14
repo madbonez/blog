@@ -19,6 +19,10 @@ export function FullScreenModal({
   }, []);
 
   useEffect(() => {
+    setIsFullScreen(false);
+  }, []);
+
+  useEffect(() => {
     if (modeChangeCallback) {
       modeChangeCallback(isFullScreen);
     }
