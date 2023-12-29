@@ -3,7 +3,9 @@ slug:
   - gpt
   - task-sum-dod-prompt
 header: GPT prompt Persona - Ассистент для написания чек листа (ака DoD) для задачи
-description: 'Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.'
+description: 'Автоматизирую дейтельность по вычленению сути задачи, которые ставят аналитики и менеджер. У каждого своя специфика, у меня вот такая ☺️ 
+
+Возьму самую мощную на текущий момент ML и попробую решить свою проблему с помощью точного промпта'
 keywords:
   - gpt
   - prompt
@@ -14,7 +16,9 @@ keywords:
 date: 12 июн
 ---
 
-Автоматизирую дейтельность мы вычленению сути задачи, которые ставят аналитики и менеджер. У каждого своя специфика, у меня вот такая
+Автоматизирую дейтельность по вычленению сути задачи, которые ставят аналитики и менеджер. У каждого своя специфика, у меня вот такая ☺️
+
+Возьму самую мощную на текущий момент ML и попробую решить свою проблему с помощью точного промпта
 
 ### Prompt для запроса
 
