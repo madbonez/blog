@@ -1,68 +1,134 @@
 ---
 slug:
   - js
-  - fourth
-header: Programming languages
-description: 'Purumpumpum all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and no yes they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.'
+  - post-message
+header: Iframe postMessage матрешка
+description: Кто и кому может отправлять сообщение через границы iframe
 keywords:
-  - programming
-  - javascript
-  - other
+  - html
+  - js
+  - browser api
+  - postMessage
+  - boundaries
 date: 12 июн
 ---
 
-### First
+### Если на странице несколько фреймов, кто и кому может отправить сообщение?
 
-Simple text
+[Link text Here](../1-gpt-dod-prompt/note.md)
 
-- list
-- list2
+Пример организации фреймов. Интересно, когда их действительно много. А еще они вкладываются друг в друга 🙃
 
-```mermaid
-sequenceDiagram
-    Alice ->> Bob: Hello Bob, how are you?
-    Bob-->>John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+Псевдокод такой
 
-    Bob-->Alice: Checking with John...
-    Alice->John: Yes... John, how are you?
-
-
+```html
+<html>
+  <body>
+    <iframe src="http://localhost:2020">
+      <iframe src="http://localhost:3030">
+        <iframe src="http://localhost:4040"></iframe>
+      </iframe>
+    </iframe>
+    <iframe src="http://localhost:5050"></iframe>
+  </body>
+</html>
 ```
 
----
+Теперь, актуальный код каждой странички
 
-### Drawio demo
+### 1010.html
 
-simple test img
+```html
+<html>
+  <head>
+    <title>1010</title>
+  </head>
+  <body>
+    <h1>1010</h1>
+    <button id="hello">hello</button>
+    <iframe src="http://localhost:2020/2020.html"></iframe>
+    <iframe src="http://localhost:5050/5050.html"></iframe>
+  </body>
+</html>
+```
 
-![image](first.drawio.png)
+Запуск
 
-# GFM
+> http-server --port=1010
 
-## Autolink literals
+### 2020.html
 
-www.example.com, https://example.com, and contact@example.com.
+```html
+<html>
+  <head>
+    <title>2020</title>
+  </head>
+  <body>
+    <h1>2020</h1>
+    <button id="hello">hello</button>
+    <iframe src="http://localhost:3030/3030.html">
+  </body>
+</html>
+```
 
-## Footnote
+Запуск
 
-A note[^1]
+> http-server --port=2020
 
-[^1]: Big note.
+### 5050.html
 
-## Strikethrough
+```html
+<html>
+  <head>
+    <title>5050</title>
+  </head>
+  <body>
+    <h1>5050</h1>
+    <button id="hello">hello</button>
+  </body>
+</html>
+```
 
-~one~ or ~~two~~ tildes.
+Запуск
 
-## Table
+> http-server --port=5050
 
-| Tables |  Are   | Cool  | Not |
-| :----: | :----: | :---: | :-: |
-| 123123 | 212131 | 23123 | 123 |
+### 3030.html
 
-## Tasklist
+```html
+<html>
+  <head>
+    <title>3030</title>
+  </head>
+  <body>
+    <h1>3030</h1>
+    <button id="hello">hello</button>
+    <iframe src="http://localhost:4040/4040.html"></iframe>
+  </body>
+</html>
+```
 
-- [ ] to do
-- [x] done
+Запуск
+
+> http-server --port=3030
+
+### 4040.html
+
+```html
+<html>
+  <head>
+    <title>4040</title>
+  </head>
+  <body>
+    <h1>4040</h1>
+    <button id="hello">hello</button>
+  </body>
+</html>
+```
+
+Запуск
+
+> http-server --port=4040
+
+Все запущено
+![Alt text](image.png)
